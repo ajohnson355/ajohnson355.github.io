@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Home</title>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
   </head>
   <body>
     <center>
@@ -14,7 +15,41 @@
          <a href="portfolio.html">Porfolio</a>
 </div>
     <h1><font color="black">Alittle About Me!</font></h1>
-    <img src="images/portfolio.jpg" height="450">
+  <div class="w3-content w3-display-container">
+    <div class="w3-display-container mySlides">
+      <center>
+        <img class="mySlides1" src="images/IMG_4531jpeg"< style="width:60%">
+        <img class="mySlides1" src="https://user-images.githubusercontent.com/40872030/43420420-76aed1d8-93f8-11e8-8d0c-cc3034855cc6.jpgg" style="width:60%">
+        <img class="mySlides1" src="https://user-images.githubusercontent.com/40872030/43420441-876da756-93f8-11e8-8c0c-ee402cd46954.jpg" style="width:60%">
+        <img class="mySlides1" src="https://user-images.githubusercontent.com/40872030/43420498-bd95d790-93f8-11e8-97af-d49e156919d1.jpg" style="width:60%">
+      </center>
+    </div>
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, 0)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, 0)">&#10095;</button>
+  </div>
     </center>
   </body>
 </html>
+
+
+ <script>
+  var slideIndex = [1,1,1];
+  var slideId = ["mySlides1", "mySlides2", "mySlides3"]
+  showDivs(1, 0);
+  showDivs(1, 1);
+  showDivs(1, 2);
+ 
+  function plusDivs(n, no) {
+    showDivs(slideIndex[no] += n, no);
+  }
+  function showDivs(n, no) {
+    var i;
+    var x = document.getElementsByClassName(slideId[no]);
+    if (n > x.length) {slideIndex[no] = 1}
+    if (n < 1) {slideIndex[no] = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    x[slideIndex[no]-1].style.display = "block";
+  }
+  </script>
