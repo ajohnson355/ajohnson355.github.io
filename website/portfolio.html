@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Home</title>
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
   <body>
     <center>
@@ -15,41 +16,59 @@
          <a href="portfolio.html">Porfolio</a>
 </div>
     <h1><font color="black">Alittle About Me!</font></h1>
-  <div class="w3-content w3-display-container">
-    <div class="w3-display-container mySlides">
-      <center>
-        <img class="mySlides1" src="images/IMG_4531jpeg"< style="width:60%">
-        <img class="mySlides1" src="https://user-images.githubusercontent.com/40872030/43420420-76aed1d8-93f8-11e8-8d0c-cc3034855cc6.jpgg" style="width:60%">
-        <img class="mySlides1" src="https://user-images.githubusercontent.com/40872030/43420441-876da756-93f8-11e8-8c0c-ee402cd46954.jpg" style="width:60%">
-        <img class="mySlides1" src="https://user-images.githubusercontent.com/40872030/43420498-bd95d790-93f8-11e8-97af-d49e156919d1.jpg" style="width:60%">
-      </center>
-    </div>
-    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, 0)">&#10094;</button>
-    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, 0)">&#10095;</button>
+ <div class="slideshow-container">
+
+ 
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="images/gwc1.jpg" style="width:100%">
+    <div class="text">Lawndale Girls Who Code </div>
   </div>
-    </center>
-  </body>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="images/gwc2.jpg" style="width:100%">
+        <div class="text">We Stick Together!</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="images/gwc3.jpg" style="width:100%">
+    <div class="text">Officially a Girls Who Code Alumni! </div>
+  </div>
+
+<center>
+  <button onclick="document.getElementById('id01').style.display='block'"
+  class="w3-button">Watch This Video</button>
+  <!-- The Modal -->
+  <div id="id01" class="w3-modal">
+    <div id= "hello" class="w3-modal-content w3-animate-left">
+      <div id = "hello" class="w3-container">
+        <span id = "hello" onclick="document.getElementById('id01').style.display='none'"
+        class="w3-modal-content w3-animate-zoom">&times;</span>
+      <p>Girls Who Code! <a href = "https://www.google.com/amp/s/abc7.com/amp/education/girls-who-code-program-prepares-girls-for-stem-related-careers/3874018/"></a>.</p>
+      </div>
+    </div>
+  </div>
+  
+
+   </center>
+ </body>
 </html>
 
+<script>
+ var slideIndex = 0;
+showSlides();
 
- <script>
-  var slideIndex = [1,1,1];
-  var slideId = ["mySlides1", "mySlides2", "mySlides3"]
-  showDivs(1, 0);
-  showDivs(1, 1);
-  showDivs(1, 2);
- 
-  function plusDivs(n, no) {
-    showDivs(slideIndex[no] += n, no);
-  }
-  function showDivs(n, no) {
+function showSlides() {
     var i;
-    var x = document.getElementsByClassName(slideId[no]);
-    if (n > x.length) {slideIndex[no] = 1}
-    if (n < 1) {slideIndex[no] = x.length}
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
     }
-    x[slideIndex[no]-1].style.display = "block";
-  }
-  </script>
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1} 
+    slides[slideIndex-1].style.display = "block"; 
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
